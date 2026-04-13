@@ -1,0 +1,147 @@
+.albums-page h2 {
+  font-size: 22px;
+}
+
+.album-row {
+  display: grid;
+  grid-template-columns: 4px 50px 1fr 90px 80px 80px 80px;
+  align-items: center;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.album-row:nth-child(odd) {
+  background: var(--bg2);
+}
+
+.album-row:hover {
+  background: var(--bg3);
+}
+
+.album-row .album-strip {
+  height: 100%;
+  min-height: 40px;
+}
+
+.album-row .rank {
+  font-family: var(--font-head);
+  font-size: 28px;
+  color: #333;
+  padding: 0 16px;
+}
+
+.album-row .album-info {
+  overflow: hidden;
+}
+
+.album-row .album-name {
+  font-family: var(--font-head);
+  font-size: 16px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+}
+
+.album-row .album-year {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.album-row .composite {
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.album-row .peak-song {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.album-row .avg-elo {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.album-row .songs-rated {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.album-row .confidence {
+  font-family: var(--font-head);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.album-row .confidence.low {
+  color: var(--text-dim);
+}
+
+.album-row .confidence.med {
+  color: var(--text);
+}
+
+.album-row .confidence.high {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.album-row .confidence.unranked {
+  color: #333;
+}
+
+.album-detail {
+  background: var(--bg2);
+  border-bottom: 1px solid #222;
+  padding: 16px;
+}
+
+.album-meta {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.album-song {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #1a1a1a;
+  font-size: 13px;
+}
+
+.album-song .as-title {
+  color: var(--text);
+}
+
+.album-song .as-elo {
+  font-family: monospace;
+  color: var(--text-dim);
+}
+
+.unranked-section {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #222;
+}
+
+.unranked-section h3 {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
+  .album-row {
+    grid-template-columns: 4px 36px 1fr 60px 50px;
+  }
+
+  .album-row .peak-song,
+  .album-row .avg-elo {
+    display: none;
+  }
+}

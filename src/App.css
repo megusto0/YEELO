@@ -1,0 +1,228 @@
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.top-nav .tab {
+  font-family: var(--font-head);
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 4px;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.top-nav .tab:hover {
+  color: var(--text);
+}
+
+.top-nav .tab.active {
+  color: var(--white);
+}
+
+.top-nav .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--white);
+}
+
+.top-nav .gear-btn {
+  position: absolute;
+  right: 24px;
+  background: none;
+  border: 1px solid #333;
+  color: var(--text-dim);
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.top-nav .gear-btn:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+main {
+  flex: 1;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .top-nav {
+    display: none;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-top: 1px solid #222;
+    z-index: 100;
+    justify-content: space-around;
+    padding: 8px 0;
+  }
+
+  .bottom-nav .tab {
+    font-family: var(--font-head);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 8px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .bottom-nav .tab.active {
+    color: var(--white);
+  }
+
+  main {
+    padding: 16px 12px 80px;
+  }
+}
+
+.battle-container {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+@media (max-width: 767px) {
+  .battle-container {
+    flex-direction: column;
+    gap: 16px;
+    min-height: auto;
+  }
+}
+
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 24px;
+  color: var(--text-dim);
+  letter-spacing: 0.3em;
+  min-width: 40px;
+}
+
+.battle-controls {
+  text-align: center;
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.battle-controls button {
+  font-family: var(--font-head);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid #333;
+  color: var(--text-dim);
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.battle-controls button:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.battle-controls .undo-btn {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.battle-info {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.battle-info .match-num {
+  color: var(--text);
+}
+
+.progress-bar {
+  width: 200px;
+  height: 3px;
+  background: #222;
+  margin: 8px auto 0;
+  display: block;
+}
+
+.progress-bar .fill {
+  height: 100%;
+  background: var(--white);
+  transition: width 0.3s;
+}
+
+.shortcut-hints {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #444;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 767px) {
+  .shortcut-hints {
+    display: none;
+  }
+}
